@@ -103,6 +103,8 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
 
+  // initial commit checking
+
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
