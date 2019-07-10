@@ -130,7 +130,7 @@ function articleComponent(article) {
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
-  const expandButton = document.createElement('span');
+  let expandButton = document.createElement('span');
 
   // setup structure of elements
   articleDiv.appendChild(articleTitle);
@@ -152,13 +152,20 @@ function articleComponent(article) {
   p1.textContent = article.firstParagraph;
   p2.textContent = article.secondParagraph;
   p3.textContent = article.thirdParagraph;
-  expandButton.textContent = 'Expand';
+  expandButton.textContent = 'Click to Expand';
+
+
 
 
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   expandButton.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open');
+    console.log(articleDiv.classList.contains('article-open'));
+    expandButton.textContent = articleDiv.classList.contains('article-open') ? 'Click to Close' : 'Click to Expand'
+
+
+    // expandButton.textContent === 'Click to Expand' ? expandButton.textContent = 'Click to Close' : expandButton.textContent = 'Click to Expand';
   })
 
   // Step 3: return the entire component.

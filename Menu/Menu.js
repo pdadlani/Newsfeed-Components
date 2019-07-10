@@ -34,6 +34,7 @@ let menuItems = [
   
 */
 
+// Step 6: add the menu component to the DOM.
 const header = document.querySelector('.header');
 
 header.appendChild(menuComponent(menuItems));
@@ -44,12 +45,6 @@ function menuComponent(array) {
   // define new elements
   const menu = document.createElement('div');
   const menuUl = document.createElement('ul');
-  // const students = document.createElement('li');
-  // const faculty = document.createElement('li');
-  // const whatsNew = document.createElement('li');
-  // const techTrends = document.createElement('li');
-  // const music = document.createElement('li');
-  // const logOut = document.createElement('li');
 
   // step 2.1: iterate over the array
   array.forEach(item => {
@@ -63,13 +58,6 @@ function menuComponent(array) {
 
   //setup structure of elements
   menu.appendChild(menuUl);
-  // menuUl.appendChild(students);
-  // menuUl.appendChild(faculty);
-  // menuUl.appendChild(whatsNew);
-  // menuUl.appendChild(techTrends);
-  // menuUl.appendChild(music);
-  // menuUl.appendChild(logOut);
-
 
   // set class name
   menu.classList.add('menu');
@@ -84,5 +72,6 @@ function menuComponent(array) {
     menu.classList.toggle('menu--open');
   })
 
+  // Step 5: return the menu component.
   return menu;
 }
