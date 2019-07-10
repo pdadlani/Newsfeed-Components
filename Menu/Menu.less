@@ -27,4 +27,32 @@
 
 .menu--open {
   display: block;
+  animation: 
+    pulse 3s ease infinite alternate, 
+    nudge 5s linear infinite ;
 }
+
+@keyframes pulse {
+  0% {
+    background-color: green;
+  }
+  50%, 100% {
+    background-color: orange;
+  }
+}
+
+@keyframes nudge {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  
+  50% {
+    transform: translate(50px, 0);
+  }
+  
+  // 80% {
+  //   transform: translate(-100px, 0);
+  // }
+}
+
+
