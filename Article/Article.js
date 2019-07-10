@@ -154,16 +154,12 @@ function articleComponent(article) {
   p3.textContent = article.thirdParagraph;
   expandButton.textContent = 'Click to Expand';
 
-
-
-
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   expandButton.addEventListener('click', () => {
     articleDiv.classList.toggle('article-open');
-    console.log(articleDiv.classList.contains('article-open'));
+    // console.log(articleDiv.classList.contains('article-open'));
     expandButton.textContent = articleDiv.classList.contains('article-open') ? 'Click to Close' : 'Click to Expand'
-
 
     // expandButton.textContent === 'Click to Expand' ? expandButton.textContent = 'Click to Close' : expandButton.textContent = 'Click to Expand';
   })
@@ -176,6 +172,6 @@ function articleComponent(article) {
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article
 
-  completed in lines 90 - 105
+  completed in lines 90 - 98
 
 */
