@@ -155,9 +155,16 @@ function articleComponent(article) {
   expandButton.textContent = 'Click to Expand';
 
   // Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
+  articleDiv.addEventListener('transitionend', () => {
+    articleDiv.style.height = '';
+  });
   expandButton.addEventListener('click', () => {
-    articleDiv.classList.toggle('article-open');
+    if (articleDiv.classList.contains('article-open')) {
+      articleDiv.classList.remove('article-open') 
+    } else {
+      articleDiv.style.height = `${articleDiv.scrollHeight}px`;
+      articleDiv.classList.toggle('article-open');
+    }
     // console.log(articleDiv.classList.contains('article-open'));
     expandButton.textContent = articleDiv.classList.contains('article-open') ? 'Click to Close' : 'Click to Expand'
 
